@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react'
 
-function App() {
+const App = () => {
+
+    const bootcamps = [
+        {
+            id:1 , 
+            name: 'Ciberseguridad bootcamp',
+            average_rating: 8
+        },
+        {
+            id:2 , 
+            name: 'Python bootcamp',
+            average_rating: 9
+        }
+    ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+       
+        <h1>Listado de Bootcamps: </h1>
+            <ul>
+                { bootcamps.map((bootcamp, index) =>(
+                    <li key={index}> {bootcamp.name} </li>
+                )) 
+                }
+            </ul>
+            <ul>
+
+            </ul>
+    </>
+  )
 }
 
-export default App;
+export default App
